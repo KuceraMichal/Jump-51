@@ -1,0 +1,192 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://src/Items/Abillity_computer.gd" type="Script" id=1]
+[ext_resource path="res://assets/AComputer.PNG" type="Texture" id=2]
+[ext_resource path="res://assets/Ability choose.PNG" type="Texture" id=3]
+[ext_resource path="res://assets/Lock.PNG" type="Texture" id=4]
+[ext_resource path="res://assets/Levitation.PNG" type="Texture" id=5]
+[ext_resource path="res://assets/Hamer.PNG" type="Texture" id=6]
+[ext_resource path="res://assets/DoubleJump.PNG" type="Texture" id=7]
+[ext_resource path="res://assets/Borderline.PNG" type="Texture" id=8]
+[ext_resource path="res://assets/Gunblue.PNG" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 80.5, 47.75 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 29, 29.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 29, 29 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 29, 29 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 29, 29 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 29, 29.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 29, 29 )
+
+[node name="Abillity_computer" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3.5, -23 )
+shape = SubResource( 1 )
+
+[node name="AComputer" type="Sprite" parent="."]
+position = Vector2( 0, -50 )
+texture = ExtResource( 2 )
+
+[node name="Choose_table" type="Node2D" parent="."]
+visible = false
+
+[node name="AbilityChoose" type="Sprite" parent="Choose_table"]
+modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( 0, -151 )
+texture = ExtResource( 3 )
+
+[node name="Area_DJ" type="Area2D" parent="Choose_table"]
+position = Vector2( 0, -1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Choose_table/Area_DJ"]
+position = Vector2( -75, -186.5 )
+shape = SubResource( 2 )
+
+[node name="DoubleJump" type="Sprite" parent="Choose_table/Area_DJ"]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -75, -188 )
+texture = ExtResource( 7 )
+
+[node name="Lock_DJ" type="Sprite" parent="Choose_table/Area_DJ"]
+self_modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( -75, -187 )
+texture = ExtResource( 4 )
+
+[node name="Borderline_DJ" type="Sprite" parent="Choose_table/Area_DJ"]
+visible = false
+modulate = Color( 0.4, 0.4, 0.4, 1 )
+position = Vector2( -75, -187 )
+texture = ExtResource( 8 )
+
+[node name="Area_Lev" type="Area2D" parent="Choose_table"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Choose_table/Area_Lev"]
+position = Vector2( 0, -187 )
+shape = SubResource( 3 )
+
+[node name="Levitation" type="Sprite" parent="Choose_table/Area_Lev"]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 0, -187 )
+texture = ExtResource( 5 )
+
+[node name="Lock_Lev" type="Sprite" parent="Choose_table/Area_Lev"]
+self_modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( 0, -186 )
+texture = ExtResource( 4 )
+
+[node name="Borderline_Lev" type="Sprite" parent="Choose_table/Area_Lev"]
+visible = false
+modulate = Color( 0.396078, 0.396078, 0.396078, 1 )
+position = Vector2( 0, -187 )
+texture = ExtResource( 8 )
+
+[node name="Area2_Ham" type="Area2D" parent="Choose_table"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Choose_table/Area2_Ham"]
+position = Vector2( 75, -187 )
+shape = SubResource( 4 )
+
+[node name="Hamer" type="Sprite" parent="Choose_table/Area2_Ham"]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 75, -187 )
+texture = ExtResource( 6 )
+
+[node name="Lock_Ham" type="Sprite" parent="Choose_table/Area2_Ham"]
+self_modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( 75, -187 )
+texture = ExtResource( 4 )
+
+[node name="Borderline_Ham" type="Sprite" parent="Choose_table/Area2_Ham"]
+visible = false
+modulate = Color( 0.403922, 0.403922, 0.403922, 1 )
+position = Vector2( 75, -186 )
+texture = ExtResource( 8 )
+
+[node name="Area_Gun" type="Area2D" parent="Choose_table"]
+
+[node name="Lock_Gun" type="Sprite" parent="Choose_table/Area_Gun"]
+self_modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( 0, -115 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Choose_table/Area_Gun"]
+position = Vector2( 0, -116 )
+shape = SubResource( 5 )
+
+[node name="Borderline_Gun" type="Sprite" parent="Choose_table/Area_Gun"]
+visible = false
+self_modulate = Color( 0.407843, 0.407843, 0.407843, 1 )
+position = Vector2( 0, -115 )
+texture = ExtResource( 8 )
+
+[node name="Gunblue" type="Sprite" parent="Choose_table/Area_Gun"]
+visible = false
+position = Vector2( -1, -116 )
+texture = ExtResource( 9 )
+
+[node name="Area_Shield" type="Area2D" parent="Choose_table"]
+
+[node name="Lock_Shield" type="Sprite" parent="Choose_table/Area_Shield"]
+self_modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( -75, -115 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Choose_table/Area_Shield"]
+position = Vector2( -75, -116 )
+shape = SubResource( 6 )
+
+[node name="Borderline_Shield" type="Sprite" parent="Choose_table/Area_Shield"]
+visible = false
+self_modulate = Color( 0.4, 0.4, 0.4, 1 )
+position = Vector2( -75, -116 )
+texture = ExtResource( 8 )
+
+[node name="Area_xx" type="Area2D" parent="Choose_table"]
+
+[node name="Lock_xx" type="Sprite" parent="Choose_table/Area_xx"]
+self_modulate = Color( 1, 1, 1, 0.647059 )
+position = Vector2( 75, -115 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Choose_table/Area_xx"]
+position = Vector2( 75, -115 )
+shape = SubResource( 7 )
+
+[node name="Borderline_xx" type="Sprite" parent="Choose_table/Area_xx"]
+visible = false
+modulate = Color( 0.407843, 0.407843, 0.407843, 1 )
+position = Vector2( 75, -115 )
+texture = ExtResource( 8 )
+
+[connection signal="body_entered" from="." to="." method="_on_Abillity_computer_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Abillity_computer_body_exited"]
+[connection signal="mouse_entered" from="Choose_table/Area_DJ" to="." method="_on_Area_DJ_mouse_entered"]
+[connection signal="mouse_exited" from="Choose_table/Area_DJ" to="." method="_on_Area_DJ_mouse_exited"]
+[connection signal="mouse_entered" from="Choose_table/Area_Lev" to="." method="_on_Area_Lev_mouse_entered"]
+[connection signal="mouse_exited" from="Choose_table/Area_Lev" to="." method="_on_Area_Lev_mouse_exited"]
+[connection signal="mouse_entered" from="Choose_table/Area2_Ham" to="." method="_on_Area2_Ham_mouse_entered"]
+[connection signal="mouse_exited" from="Choose_table/Area2_Ham" to="." method="_on_Area2_Ham_mouse_exited"]
+[connection signal="mouse_entered" from="Choose_table/Area_Gun" to="." method="_on_Area_Gun_mouse_entered"]
+[connection signal="mouse_exited" from="Choose_table/Area_Gun" to="." method="_on_Area_Gun_mouse_exited"]
+[connection signal="mouse_entered" from="Choose_table/Area_Shield" to="." method="_on_Area_Shield_mouse_entered"]
+[connection signal="mouse_exited" from="Choose_table/Area_Shield" to="." method="_on_Area_Shield_mouse_exited"]
+[connection signal="mouse_entered" from="Choose_table/Area_xx" to="." method="_on_Area_xx_mouse_entered"]
+[connection signal="mouse_exited" from="Choose_table/Area_xx" to="." method="_on_Area_xx_mouse_exited"]
